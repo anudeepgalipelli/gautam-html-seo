@@ -71,7 +71,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 @media (min-width: 1280px) { .container { padding: 0 3rem; } }
 
 /* Section Padding */
-.section-padding { padding: 5rem 0; }
+.section-padding { padding: 3.5rem 0; }
 @media (min-width: 768px) { .section-padding { padding: 7rem 0; } }
 
 /* Section Header */
@@ -392,7 +392,7 @@ html.dark .mobile-dark-toggle:hover {
    ============================================ */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -867,6 +867,51 @@ html.dark .affiliation-item svg { color: var(--color-accent); }
 }
 html.dark .affiliation-directions { color: var(--color-accent); }
 .affiliation-directions svg { width: 0.75rem; height: 0.75rem; flex-shrink: 0; }
+.affiliations-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.affiliations-toggle:hover {
+  background: var(--color-bg-alt);
+  border-color: var(--color-primary);
+}
+html.dark .affiliations-toggle {
+  color: var(--color-accent);
+  border-color: #222222;
+}
+html.dark .affiliations-toggle:hover {
+  background: #111111;
+  border-color: var(--color-accent);
+}
+.affiliations-toggle svg {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.3s;
+}
+.affiliations-toggle[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+#affiliationsMore {
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  overflow: hidden;
+}
+#affiliationsMore.collapsed {
+  max-height: 0;
+  opacity: 0;
+}
 
 /* ============================================
    SOCIAL SERVICES
@@ -1145,6 +1190,50 @@ html.dark .faq-trigger-text svg { color: var(--color-accent); }
   padding: 0 1.5rem 1.25rem;
 }
 .faq-content p { font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.6; padding-left: 2rem; }
+.faq-hidden {
+  display: none;
+}
+.faq-hidden.visible {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+.faq-toggle-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.faq-toggle-all:hover {
+  background: var(--color-bg-alt);
+  border-color: var(--color-primary);
+}
+html.dark .faq-toggle-all {
+  color: var(--color-accent);
+  border-color: #222222;
+}
+html.dark .faq-toggle-all:hover {
+  background: #111111;
+  border-color: var(--color-accent);
+}
+.faq-toggle-all svg {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.3s;
+}
+.faq-toggle-all[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
 
 /* ============================================
    CONTACT

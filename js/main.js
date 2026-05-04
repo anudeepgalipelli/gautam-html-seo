@@ -517,9 +517,29 @@
   }
 
   /* ============================================
+     AFFILIATIONS TOGGLE
+     ============================================ */
+  const affiliationsToggle = $('#affiliationsToggle');
+  const affiliationsMore = $('#affiliationsMore');
+  if (affiliationsToggle && affiliationsMore) {
+    affiliationsMore.classList.add('collapsed');
+    on(affiliationsToggle, 'click', () => {
+      const isExpanded = affiliationsMore.classList.contains('collapsed');
+      affiliationsMore.classList.toggle('collapsed', !isExpanded);
+      affiliationsToggle.setAttribute('aria-expanded', isExpanded);
+      affiliationsToggle.innerHTML = isExpanded
+        ? 'Show fewer locations <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 15 12 9 18 15"/></svg>'
+        : 'View all locations <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+    });
+  }
+
+  /* ============================================
      FAQ ACCORDION
      ============================================ */
   const faqItems = $$('.faq-item');
+  const faqToggleAll = $('#faqToggleAll');
+  const faqHidden = $$('.faq-hidden');
+
   faqItems.forEach(item => {
     const trigger = item.querySelector('.faq-trigger');
     if (!trigger) return;
@@ -538,6 +558,19 @@
       }
     });
   });
+
+  if (faqToggleAll && faqHidden.length) {
+    on(faqToggleAll, 'click', () => {
+      const isExpanded = faqToggleAll.getAttribute('aria-expanded') === 'true';
+      faqHidden.forEach(item => {
+        item.classList.toggle('visible', !isExpanded);
+      });
+      faqToggleAll.setAttribute('aria-expanded', !isExpanded);
+      faqToggleAll.innerHTML = !isExpanded
+        ? 'Show fewer FAQs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 15 12 9 18 15"/></svg>'
+        : 'View all FAQs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+    });
+  }
 
   /* ============================================
      CONTACT FORM
