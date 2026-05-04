@@ -92,6 +92,10 @@ html.dark .section-label { color: var(--color-accent); }
   color: var(--color-text);
   line-height: 1.2;
 }
+.contact .section-title,
+.contact .section-subtitle {
+  color: var(--color-white);
+}
 @media (min-width: 640px) { .section-title { font-size: 2.25rem; } }
 @media (min-width: 1024px) { .section-title { font-size: 3rem; } }
 .section-subtitle {
@@ -1328,7 +1332,7 @@ html.dark .contact-info-link:hover { color: var(--color-accent); }
 }
 .contact-locations::-webkit-scrollbar { display: none; }
 .contact-location-card {
-  flex: 0 0 calc(100vw - 3rem);
+  flex: 0 0 85vw;
   max-width: 320px;
   scroll-snap-align: center;
   background: rgba(255,255,255,0.1);
@@ -1347,6 +1351,8 @@ html.dark .contact-location-card { background: rgba(17,17,17,0.8); border-color:
   font-size: 0.8125rem;
   color: rgba(255,255,255,0.8);
   margin-bottom: 0.625rem;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 .contact-location-detail svg { width: 1rem; height: 1rem; color: var(--color-secondary); flex-shrink: 0; margin-top: 0.125rem; }
 html.dark .contact-location-detail svg { color: var(--color-accent); }
