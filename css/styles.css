@@ -1,5 +1,5 @@
-/* ============================================
-   Dr. Gautam Gorityala — Static Site Styles
+﻿/* ============================================
+   Dr. Gautam Gorityala - Static Site Styles
    ============================================ */
 
 /* CSS Variables */
@@ -45,7 +45,7 @@ html.dark {
 
 /* Base */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   font-family: var(--font-family);
   background: var(--color-bg);
@@ -215,7 +215,7 @@ html.dark .scroll-progress-bar { background: linear-gradient(90deg, var(--color-
 .nav {
   position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: 1000;
+  z-index: 1002;
   transition: var(--transition);
   padding: 1.25rem 0;
 }
@@ -226,6 +226,24 @@ html.dark .scroll-progress-bar { background: linear-gradient(90deg, var(--color-
   padding: 0.75rem 0;
 }
 html.dark .nav.scrolled { background: rgba(10,10,10,0.95); box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+.nav.menu-open,
+.nav.menu-open.scrolled {
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+.nav.menu-open .nav-logo,
+.nav.menu-open.scrolled .nav-logo {
+  color: var(--color-white) !important;
+}
+html.dark .nav.menu-open .nav-logo,
+html.dark .nav.menu-open.scrolled .nav-logo {
+  color: var(--color-accent) !important;
+}
+.nav.menu-open .nav-mobile-toggle,
+.nav.menu-open.scrolled .nav-mobile-toggle {
+  color: var(--color-white) !important;
+}
 .nav-container {
   display: flex;
   align-items: center;
@@ -284,6 +302,26 @@ html.dark .nav.scrolled .dark-toggle { background: #1A1A1A; color: var(--color-a
 .dark-toggle .sun { display: none; }
 html.dark .dark-toggle .moon { display: none; }
 html.dark .dark-toggle .sun { display: block; }
+
+/* Mobile dark toggle inside hamburger menu */
+.mobile-dark-toggle {
+  margin-top: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.15);
+  color: var(--color-white);
+  border: 2px solid rgba(255,255,255,0.3);
+}
+.mobile-dark-toggle svg { width: 1.25rem; height: 1.25rem; }
+html.dark .mobile-dark-toggle {
+  background: rgba(255,255,255,0.1);
+  color: var(--color-accent);
+  border-color: rgba(255,210,63,0.4);
+}
 .nav-mobile-toggle {
   display: flex;
   align-items: center;
@@ -304,7 +342,7 @@ html.dark .nav.scrolled .nav-mobile-toggle { color: var(--color-accent); }
 .mobile-menu {
   position: fixed;
   inset: 0;
-  z-index: 999;
+  z-index: 1001;
   background: var(--color-primary);
   display: flex;
   align-items: center;
@@ -312,6 +350,7 @@ html.dark .nav.scrolled .nav-mobile-toggle { color: var(--color-accent); }
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease, visibility 0.5s ease;
+  overflow-y: auto;
 }
 html.dark .mobile-menu { background: var(--color-black); }
 html.dark .mobile-menu .mobile-menu-link:hover { color: var(--color-accent); }
@@ -321,6 +360,8 @@ html.dark .mobile-menu .mobile-menu-link:hover { color: var(--color-accent); }
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
 }
 .mobile-menu-link {
   font-size: 1.5rem;
@@ -331,6 +372,32 @@ html.dark .mobile-menu .mobile-menu-link:hover { color: var(--color-accent); }
 .mobile-menu-link:hover { color: var(--color-secondary); }
 html.dark .mobile-menu-link:hover { color: var(--color-accent); }
 .mobile-menu-cta { margin-top: 1rem; }
+.mobile-dark-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.15);
+  color: var(--color-white);
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.25);
+  transition: background 0.3s, border-color 0.3s;
+}
+.mobile-dark-toggle:hover {
+  background: rgba(255,255,255,0.25);
+  border-color: rgba(255,255,255,0.4);
+}
+html.dark .mobile-dark-toggle {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
+  color: var(--color-text);
+}
+html.dark .mobile-dark-toggle:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.25);
+}
 
 /* ============================================
    HERO
@@ -392,6 +459,7 @@ html.dark .hero-image-glow { background: rgba(255,210,63,0.1); }
 .hero-image-box {
   position: relative;
   width: 18rem; height: 18rem;
+  max-width: 100%;
 }
 @media (min-width: 640px) { .hero-image-box { width: 20rem; height: 20rem; } }
 @media (min-width: 1024px) { .hero-image-box { width: 24rem; height: 24rem; } }
@@ -605,6 +673,7 @@ html.dark .about-image-glow-2 { background: rgba(255,210,63,0.1); }
 .about-image-frame {
   position: relative;
   width: 18rem; height: 20rem;
+  max-width: 100%;
   border-radius: 1.5rem;
   overflow: hidden;
   box-shadow: var(--shadow-xl);
@@ -640,6 +709,8 @@ html.dark .about-experience-label { color: var(--color-white); }
 .services-tabs {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   margin-bottom: 2.5rem;
 }
 .services-tab {
@@ -662,7 +733,7 @@ html.dark .services-tab:hover { color: var(--color-accent); }
   box-shadow: var(--shadow);
 }
 html.dark .services-tab.active { background: var(--color-accent); color: var(--color-black); }
-.services-tab + .services-tab { margin-left: 0.375rem; }
+.services-tab + .services-tab { margin-left: 0; }
 
 .services-panel { display: none; }
 .services-panel.active { display: block; animation: fadeIn 0.4s ease; }
@@ -927,7 +998,7 @@ html.dark .timeline-card:hover { border-color: rgba(255,210,63,0.3); }
 }
 html.dark .timeline-card-icon { color: var(--color-accent); }
 .timeline-card-icon svg { width: 1.25rem; height: 1.25rem; }
-.timeline-card-title { font-size: 1.25rem; font-weight: 700; color: var(--color-white); }
+.timeline-card-title { font-size: 1.25rem; font-weight: 700; color: var(--color-white); min-width: 0; overflow-wrap: break-word; }
 .timeline-card-institution { color: var(--color-secondary); font-weight: 500; font-size: 0.875rem; margin-bottom: 0.5rem; }
 html.dark .timeline-card-institution { color: var(--color-accent); }
 .timeline-card-desc { color: var(--color-text-light); font-size: 0.875rem; line-height: 1.6; }
@@ -1062,7 +1133,7 @@ html.dark .faq-item.active { box-shadow: 0 4px 20px rgba(255,210,63,0.05); }
   text-align: left;
   background: none;
 }
-.faq-trigger-text { display: flex; align-items: center; gap: 0.75rem; }
+.faq-trigger-text { display: grid; grid-template-columns: auto 1fr; align-items: start; gap: 0.75rem; }
 .faq-trigger-text svg { width: 1.25rem; height: 1.25rem; color: var(--color-primary); flex-shrink: 0; }
 html.dark .faq-trigger-text svg { color: var(--color-accent); }
 .faq-trigger-icon { width: 1rem; height: 1rem; color: var(--color-text-muted); transition: transform 0.3s; flex-shrink: 0; }
@@ -1184,6 +1255,7 @@ html.dark .footer-brand-contact a:hover { color: var(--color-accent); }
 .footer-brand-heart {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.25rem;
   font-size: 0.875rem;
   color: rgba(255,255,255,0.7);
@@ -1235,6 +1307,11 @@ html.dark .footer-disclaimer { color: var(--color-text-light); }
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.no-js .scroll-reveal,
+.scroll-reveal.no-animate {
+  opacity: 1;
+  transform: none;
 }
 .scroll-reveal.revealed {
   opacity: 1;
@@ -1359,3 +1436,4 @@ html.dark ::-webkit-scrollbar-thumb:hover { background: var(--color-accent-dark)
     transform: none;
   }
 }
+

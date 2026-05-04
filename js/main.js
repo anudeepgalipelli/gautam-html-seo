@@ -1,5 +1,5 @@
-/**
- * Dr. Gautam Gorityala — Static Site JavaScript
+﻿/**
+ * Dr. Gautam Gorityala - Static Site JavaScript
  * All interactivity: dark mode, particles, typewriter, scroll animations, carousel, FAQ, tilt
  */
 
@@ -19,16 +19,6 @@
       if (now - last >= wait) { last = now; fn(...args); }
     };
   };
-
-  /* ============================================
-     PRELOADER
-     ============================================ */
-  const preloader = $('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      setTimeout(() => preloader.classList.add('hidden'), 1500);
-    });
-  }
 
   /* ============================================
      SCROLL PROGRESS BAR
@@ -66,10 +56,12 @@
      ============================================ */
   const mobileToggle = $('#navMobileToggle');
   const mobileMenu = $('#mobileMenu');
+  const navEl = $('.nav');
   if (mobileToggle && mobileMenu) {
     on(mobileToggle, 'click', () => {
       const isOpen = mobileMenu.classList.toggle('active');
       mobileToggle.classList.toggle('active', isOpen);
+      if (navEl) navEl.classList.toggle('menu-open', isOpen);
       mobileToggle.setAttribute('aria-expanded', isOpen);
       mobileToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
     });
@@ -77,6 +69,7 @@
       on(link, 'click', () => {
         mobileMenu.classList.remove('active');
         mobileToggle.classList.remove('active');
+        if (navEl) navEl.classList.remove('menu-open');
         mobileToggle.setAttribute('aria-expanded', 'false');
         mobileToggle.setAttribute('aria-label', 'Open menu');
       });
@@ -101,7 +94,7 @@
   /* ============================================
      DARK MODE
      ============================================ */
-  const darkToggle = $('#darkToggle');
+  const darkToggles = $$('.dark-toggle');
   const html = document.documentElement;
 
   function initDarkMode() {
@@ -113,15 +106,15 @@
   }
   initDarkMode();
 
-  if (darkToggle) {
-    on(darkToggle, 'click', () => {
+  darkToggles.forEach(toggle => {
+    on(toggle, 'click', () => {
       html.classList.toggle('dark');
       localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
     });
-  }
+  });
 
   /* ============================================
-     PARTICLE FIELD (Canvas) — Mouse + Touch Reactive
+     PARTICLE FIELD (Canvas) - Mouse + Touch Reactive
      ============================================ */
   const canvas = $('#particleCanvas');
   if (canvas) {
@@ -159,7 +152,7 @@
         this.x += this.vx;
         this.y += this.vy;
 
-        // Pointer interaction — strong repulsion + turbulence
+        // Pointer interaction - strong repulsion + turbulence
         if (pointer.active) {
           const dx = this.x - pointer.x;
           const dy = this.y - pointer.y;
@@ -174,7 +167,7 @@
             this.vx += Math.cos(angle) * push;
             this.vy += Math.sin(angle) * push;
 
-            // Swirl effect — add tangential velocity
+            // Swirl effect - add tangential velocity
             const swirl = force * 1.2;
             this.vx += Math.sin(angle) * swirl;
             this.vy -= Math.cos(angle) * swirl;
@@ -290,7 +283,7 @@
     }
     animate();
 
-    // Mouse handlers � attached to window so they work even when content overlays canvas
+    // Mouse handlers � attached to window so they work even when content overlays canvas
     on(window, 'mousemove', (e) => {
       const rect = canvas.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -305,7 +298,7 @@
       }
     });
 
-    // Touch handlers � attached to window for full-page touch tracking
+    // Touch handlers � attached to window for full-page touch tracking
     on(window, 'touchstart', (e) => {
       const rect = canvas.getBoundingClientRect();
       const touch = e.touches[0];
@@ -417,7 +410,7 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
   $$('.scroll-reveal').forEach(el => {
-    // Skip hero elements — they're animated on load
+    // Skip hero elements - they're animated on load
     if (!el.closest('.hero')) {
       revealObserver.observe(el);
     }
@@ -581,5 +574,6 @@
   }
 
 })();
+
 
 
