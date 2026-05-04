@@ -852,20 +852,21 @@ html.dark .affiliation-item { background: #111111; border-color: #222222; }
 html.dark .affiliation-item:hover { border-color: rgba(255,210,63,0.3); box-shadow: 0 12px 24px rgba(255,210,63,0.1); }
 .affiliation-item svg { width: 1.25rem; height: 1.25rem; color: var(--color-primary); flex-shrink: 0; margin-top: 0.125rem; }
 html.dark .affiliation-item svg { color: var(--color-accent); }
-.affiliation-item span { color: var(--color-text-muted); flex: 1; }
+.affiliation-item span:not(.affiliation-directions) { color: var(--color-text-muted); flex: 1; min-width: 0; }
 .affiliation-directions {
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--color-primary);
-  opacity: 0;
+  opacity: 1;
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  transition: opacity 0.3s;
+  margin-left: auto;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 html.dark .affiliation-directions { color: var(--color-accent); }
-.affiliation-item:hover .affiliation-directions { opacity: 1; }
-.affiliation-directions svg { width: 0.75rem; height: 0.75rem; }
+.affiliation-directions svg { width: 0.75rem; height: 0.75rem; flex-shrink: 0; }
 
 /* ============================================
    SOCIAL SERVICES
