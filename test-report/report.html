@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Test Report - Dr. Gautam Gorityala</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #10b981; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .timestamp { color: #64748b; font-size: 0.875rem; margin-bottom: 2rem; }
+    .section { margin-bottom: 3rem; }
+    .section-title { font-size: 1.5rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #10b981; }
+    .viewport-group { margin-bottom: 2rem; }
+    .viewport-title { font-size: 1.125rem; color: #38bdf8; margin-bottom: 1rem; }
+    .screenshot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; }
+    .screenshot-card { background: #1e293b; border-radius: 0.5rem; overflow: hidden; border: 1px solid #334155; }
+    .screenshot-card img { width: 100%; height: auto; display: block; }
+    .screenshot-label { padding: 0.75rem; font-size: 0.875rem; color: #94a3b8; }
+    .overflow-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    .overflow-table th, .overflow-table td { padding: 0.75rem; text-align: left; border: 1px solid #334155; }
+    .overflow-table th { background: #1e293b; color: #10b981; }
+    .overflow-table td { background: #0f172a; }
+    .badge { display: inline-block; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.75rem; font-weight: 600; }
+    .badge-success { background: rgba(16,185,129,0.2); color: #10b981; }
+    .badge-warning { background: rgba(245,158,11,0.2); color: #f59e0b; }
+    .badge-error { background: rgba(239,68,68,0.2); color: #ef4444; }
+    .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .summary-card { background: #1e293b; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid #334155; }
+    .summary-card .number { font-size: 2rem; font-weight: 700; color: #10b981; }
+    .summary-card .label { color: #94a3b8; font-size: 0.875rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧪 Website Test Report</h1>
+    <p class="subtitle">Dr. Gautam Gorityala - Responsive Design Testing</p>
+    <p class="timestamp">Generated: 2026-05-10T21:23:25.927Z</p>
+    <p class="timestamp">URL: https://anudeepgalipelli.github.io/gautam-html-seo/</p>
+    
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="number">5</div>
+        <div class="label">Viewports Tested</div>
+      </div>
+      <div class="summary-card">
+        <div class="number">38</div>
+        <div class="label">Screenshots Captured</div>
+      </div>
+      <div class="summary-card">
+        <div class="number">0</div>
+        <div class="label">Overflow Issues Found</div>
+      </div>
+      <div class="summary-card">
+        <div class="number">9</div>
+        <div class="label">Sections Tested</div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2 class="section-title">📊 Horizontal Overflow Analysis</h2>
+      <table class="overflow-table">
+        <tr>
+          <th>Viewport</th>
+          <th>Window Width</th>
+          <th>Document Width</th>
+          <th>Status</th>
+          <th>Overflow</th>
+        </tr>
+        
+        <tr>
+          <td>mobile-375</td>
+          <td>375px</td>
+          <td>375px</td>
+          <td><span class="badge badge-success">OK</span></td>
+          <td>None</td>
+        </tr>
+        
+        <tr>
+          <td>mobile-390</td>
+          <td>390px</td>
+          <td>390px</td>
+          <td><span class="badge badge-success">OK</span></td>
+          <td>None</td>
+        </tr>
+        
+        <tr>
+          <td>mobile-414</td>
+          <td>414px</td>
+          <td>414px</td>
+          <td><span class="badge badge-success">OK</span></td>
+          <td>None</td>
+        </tr>
+        
+        <tr>
+          <td>tablet-768</td>
+          <td>768px</td>
+          <td>768px</td>
+          <td><span class="badge badge-success">OK</span></td>
+          <td>None</td>
+        </tr>
+        
+        <tr>
+          <td>desktop-1440</td>
+          <td>1440px</td>
+          <td>1440px</td>
+          <td><span class="badge badge-success">OK</span></td>
+          <td>None</td>
+        </tr>
+        
+      </table>
+      
+    </div>
+    
+    
+    <div class="section">
+      <h2 class="section-title">📱 mobile-375 (375x812)</h2>
+      <div class="screenshot-grid">
+        
+        <div class="screenshot-card">
+          <img src="mobile-375-about.png" alt="about" loading="lazy">
+          <div class="screenshot-label">about</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="mobile-375-services.png" alt="services" loading="lazy">
+          <div class="screenshot-label">services</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="mobile-375-affiliations.png" alt="affiliations" loading="lazy">
+          <div class="screenshot-label">affiliations</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="mobile-375-testimonials.png" alt="testimonials" loading="lazy">
+          <div class="screenshot-label">testimonials</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="mobile-375-faq.png" alt="faq" loading="lazy">
+          <div class="screenshot-label">faq</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="mobile-375-contact.png" alt="contact" loading="lazy">
+          <div class="screenshot-label">contact</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="mobile-375-footer.png" alt="footer" loading="lazy">
+          <div class="screenshot-label">footer</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="mobile-375-contact-scrolled.png" alt="contact-scrolled" loading="lazy">
+          <div class="screenshot-label">contact-scrolled</div>
+        </div>
+        
+      </div>
+    </div>
+      
+    <div class="section">
+      <h2 class="section-title">📱 mobile-390 (390x844)</h2>
+      <div class="screenshot-grid">
+        
+        <div class="screenshot-card">
+          <img src="mobile-390-about.png" alt="about" loading="lazy">
+          <div class="screenshot-label">about</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="mobile-390-services.png" alt="services" loading="lazy">
+          <div class="screenshot-label">services</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="mobile-390-affiliations.png" alt="affiliations" loading="lazy">
+          <div class="screenshot-label">affiliations</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="mobile-390-testimonials.png" alt="testimonials" loading="lazy">
+          <div class="screenshot-label">testimonials</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="mobile-390-faq.png" alt="faq" loading="lazy">
+          <div class="screenshot-label">faq</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="mobile-390-contact.png" alt="contact" loading="lazy">
+          <div class="screenshot-label">contact</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="mobile-390-footer.png" alt="footer" loading="lazy">
+          <div class="screenshot-label">footer</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="mobile-390-contact-scrolled.png" alt="contact-scrolled" loading="lazy">
+          <div class="screenshot-label">contact-scrolled</div>
+        </div>
+        
+      </div>
+    </div>
+      
+    <div class="section">
+      <h2 class="section-title">📱 mobile-414 (414x896)</h2>
+      <div class="screenshot-grid">
+        
+        <div class="screenshot-card">
+          <img src="mobile-414-about.png" alt="about" loading="lazy">
+          <div class="screenshot-label">about</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="mobile-414-services.png" alt="services" loading="lazy">
+          <div class="screenshot-label">services</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="mobile-414-affiliations.png" alt="affiliations" loading="lazy">
+          <div class="screenshot-label">affiliations</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="mobile-414-testimonials.png" alt="testimonials" loading="lazy">
+          <div class="screenshot-label">testimonials</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="mobile-414-faq.png" alt="faq" loading="lazy">
+          <div class="screenshot-label">faq</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="mobile-414-contact.png" alt="contact" loading="lazy">
+          <div class="screenshot-label">contact</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="mobile-414-footer.png" alt="footer" loading="lazy">
+          <div class="screenshot-label">footer</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="mobile-414-contact-scrolled.png" alt="contact-scrolled" loading="lazy">
+          <div class="screenshot-label">contact-scrolled</div>
+        </div>
+        
+      </div>
+    </div>
+      
+    <div class="section">
+      <h2 class="section-title">📱 tablet-768 (768x1024)</h2>
+      <div class="screenshot-grid">
+        
+        <div class="screenshot-card">
+          <img src="tablet-768-about.png" alt="about" loading="lazy">
+          <div class="screenshot-label">about</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="tablet-768-services.png" alt="services" loading="lazy">
+          <div class="screenshot-label">services</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="tablet-768-affiliations.png" alt="affiliations" loading="lazy">
+          <div class="screenshot-label">affiliations</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="tablet-768-testimonials.png" alt="testimonials" loading="lazy">
+          <div class="screenshot-label">testimonials</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="tablet-768-faq.png" alt="faq" loading="lazy">
+          <div class="screenshot-label">faq</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="tablet-768-contact.png" alt="contact" loading="lazy">
+          <div class="screenshot-label">contact</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="tablet-768-footer.png" alt="footer" loading="lazy">
+          <div class="screenshot-label">footer</div>
+        </div>
+        
+      </div>
+    </div>
+      
+    <div class="section">
+      <h2 class="section-title">📱 desktop-1440 (1440x900)</h2>
+      <div class="screenshot-grid">
+        
+        <div class="screenshot-card">
+          <img src="desktop-1440-about.png" alt="about" loading="lazy">
+          <div class="screenshot-label">about</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="desktop-1440-services.png" alt="services" loading="lazy">
+          <div class="screenshot-label">services</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="desktop-1440-affiliations.png" alt="affiliations" loading="lazy">
+          <div class="screenshot-label">affiliations</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="desktop-1440-testimonials.png" alt="testimonials" loading="lazy">
+          <div class="screenshot-label">testimonials</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="desktop-1440-faq.png" alt="faq" loading="lazy">
+          <div class="screenshot-label">faq</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="desktop-1440-contact.png" alt="contact" loading="lazy">
+          <div class="screenshot-label">contact</div>
+        </div>
+        
+        <div class="screenshot-card">
+          <img src="desktop-1440-footer.png" alt="footer" loading="lazy">
+          <div class="screenshot-label">footer</div>
+        </div>
+        
+      </div>
+    </div>
+      
+  </div>
+</body>
+</html>
