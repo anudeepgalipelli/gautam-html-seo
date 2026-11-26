@@ -22,11 +22,11 @@ const consultantHospitals: Hospital[] = [
 ];
 
 const visitingHospitals = [
-  'Rajeshwari Nursing Home, Hayathnagar, Hyderabad',
-  'Rakshita Hospital, Chaitanyapuri, Hyderabad',
   'Yashoda Hospitals, Malakpet, Hyderabad',
   'Orange Hospitals, L.B. Nagar, Hyderabad',
   'Rushcare Hospitals, L.B. Nagar, Hyderabad',
+  'Rakshita Hospital, Chaitanyapuri, Hyderabad',
+  'Rajeshwari Nursing Home, Hayathnagar, Hyderabad',
   "People's Multi Specialty Hospital, Mall – Yacharam",
   'Mahonia Multi Specialty Hospital, Manneguda, Hyderabad',
   'Manogna Multi Speciality Hospital, Abdullapurmet, Hyderabad',
@@ -107,13 +107,13 @@ export default function Affiliations() {
               </div>
             </div>
 
-            {/* Visiting Consultant */}
+            {/* Previously Worked */}
             <div>
               <div className="flex items-center gap-3 mb-5 reveal-item">
                 <div className="w-10 h-10 bg-[#10B981] dark:bg-black dark:border dark:border-[#FFD23F]/40 rounded-lg flex items-center justify-center">
                   <Building2 className="w-5 h-5 text-white dark:text-[#FFD23F]" />
                 </div>
-                <h3 className="text-xl font-bold text-[#1E293B] dark:text-white">Visiting Consultant</h3>
+                <h3 className="text-xl font-bold text-[#1E293B] dark:text-white">Previously Worked</h3>
               </div>
               <div className="space-y-3">
                 {visitingHospitals.map((hospital, index) => (
